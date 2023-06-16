@@ -78,7 +78,7 @@ function consultarAPI(ciudad, pais) {
 function mostrarClima(datos) {
   const { main: { temp, temp_max, temp_min } } = datos;
 
-  const centigrados = temp - 272.15;
+  const centigrados = kelvinACentigrados(temp);
 
   const actual = document.createElement('p');
   actual.innerHTML = `${centigrados} &#8451`;
@@ -89,6 +89,11 @@ function mostrarClima(datos) {
   resultadoDiv.appendChild(actual);
 
   resultado.appendChild(resultadoDiv);
+}
+
+// const kelvinACentigrados = grados => parseInt(grados - 272.15);
+function kelvinACentigrados(grados) {
+  return parseInt(grados - 272.15)
 }
 
 function limpiarHTML() {
