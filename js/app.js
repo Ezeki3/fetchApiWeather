@@ -87,14 +87,19 @@ function mostrarClima(datos) {
   actual.classList.add('font-bold', 'text-6xl');
 
   const tempMaxima = document.createElement('p');
-  tempMaxima.innerHTML = `${max} &#8451`;
+  tempMaxima.innerHTML = `Max: ${max} &#8451`;
   tempMaxima.classList.add('text-xl');
+
+  const tempMinima = document.createElement('p');
+  tempMinima.innerHTML = `Min: ${min} &#8451`;
+  tempMinima.classList.add('text-xl');
 
   const resultadoDiv = document.createElement('div');
   resultadoDiv.classList.add('text-center', 'text-white');
 
   resultadoDiv.appendChild(actual);
   resultadoDiv.appendChild(tempMaxima);
+  resultadoDiv.appendChild(tempMinima);
 
   resultado.appendChild(resultadoDiv);
 }
